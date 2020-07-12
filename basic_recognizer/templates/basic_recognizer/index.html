@@ -1,0 +1,23 @@
+{% extends 'basic_recognizer/base.html' %}
+{% block title %}ラーメンアプリメニュー{% endblock %}
+
+{% block content %}
+
+<div>
+    <h4 class="mt-4 mb-5 border-bottom" style="font-family: fantasy;">Ramen type recognition</h4>
+    <p style="font-family: fantasy;">Select an image file and click the recognition button.</p>
+    <form action="{% url 'basic_recognizer:predict' %}" method="post" class="form" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="form-group">
+        <div class="custom-file">
+            {{ form.image }}
+            <label class="custom-file-label" for="customFile" style="font-family: Arial, Helvetica, sans-serif;">
+                Select the file you want to recognize.
+            </label>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary" style="font-family: fantasy;">Recognize</button>
+    </form> 
+
+</div>
+{% endblock %}

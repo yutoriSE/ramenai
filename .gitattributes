@@ -1,0 +1,2 @@
+basic_recognizer/ml_models/vgg16_transfer.h5 filter=lfs diff=lfs merge=lfs -text
+*.h5 filter=lfs diff=lfs merge=lfs -text

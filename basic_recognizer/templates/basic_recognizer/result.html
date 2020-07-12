@@ -1,0 +1,33 @@
+{% extends 'basic_recognizer/base.html' %}
+{% block title %}ラーメン判別アプリメニュー{% endblock %}
+
+{% block content %}
+<div>
+    <h4 class="mt-4 mb-5 border-bottom" style="font-family: fantasy;">Result</h4>
+
+    <table class='table'>
+        <tbody>
+            <tr>
+                <td style="font-family: fantasy;">NAME</td>
+                <td style="font-family: fantasy;">{{ photo_name }}</td>
+            </tr>
+            <tr>
+                <td style="font-family: fantasy;">IMAGE</td>
+                <td style="font-family: fantasy;"><img class='preview-img' src={{ photo_data }} width=224, height=224></img></td>
+            </tr>
+            <tr>
+                <td style="font-family: fantasy;">Types of ramen</td>
+                <td style="font-family: fantasy;">{{ predicted }}</td>
+            </tr>
+            <tr>
+                <td style="font-family: fantasy;">Recognition probability</td>
+                <td style="font-family: fantasy;">{{ percentage }}%</td>
+
+            </tr>
+        </tbody>
+    </table>
+
+    <a href = "{% url 'basic_recognizer:index' %}" class="btn btn-primary" style="font-family: fantasy;">BACK</a>
+
+</div>
+{% endblock %}

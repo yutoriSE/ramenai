@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+    {% load bootstrap4 %}
+    {% bootstrap_css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'basic_recognizer/css/style.css' %}">
+    {% bootstrap_javascript jquery='full' %}
+    <div class="jumbotron text-center d-flex align-items-center" style="height: 800px; background:url({% static 'basic_recognizer/img/main.jpg' %}); background-size:cover; background-position:center;">
+      <div class="container">
+        <h1 class="display-4" style="color: azure; font-family: fantasy; font-size: 80px;">RAMEN RECOGNITION APP</h1>
+        <p class="lead" style="color: azure; font-family: fantasy; font-size: 30px;">The basic flavors are recognize into soy sauce, miso and salt.</p>
+      </div>
+    </div>
+</head>
+<body>
+    <div class="container">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>
